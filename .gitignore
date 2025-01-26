@@ -1,0 +1,11 @@
+# Ignore environment variables
+.env
+
+# Ignore temporary files
+temp/
+
+# Ignore R history files
+.Rhistory
+
+# Ignore output files
+output/
