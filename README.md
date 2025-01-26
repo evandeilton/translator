@@ -59,6 +59,13 @@ output_path = 'output/my_document_translated.md'
 
 # Set the target language
 target_language = 'en-US'
+# target_language = 'pt-BR'
+# target_language = 'fr-FR'
+# target_language = 'it-IT'
+# target_language = 'cn-CN'
+# target_language = 'ru-RU'
+# target_language = '..-..' find out you language. Restricted to DeepSeek suported languages.
+
 
 # Run the translation
 translate_document(input_path, output_path, target_language)
@@ -80,14 +87,10 @@ translate_document(input_path, output_path, target_language)
 
 ## Limitations
 
+- API costs
 - Maximum file size: 10MB
 - Maximum number of pages: 100
 - Supported languages: Depend on the DeepSeek API
 
 ## Contributing
 
-Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
