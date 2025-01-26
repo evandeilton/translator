@@ -59,7 +59,7 @@ output_path = 'output/my_document_translated.md'
 
 # Set the target language
 target_language = 'en-US'
-# target_language = 'pt-BR'
+# target_language = 'pt-BR' or português do Brasil
 # target_language = 'fr-FR'
 # target_language = 'it-IT'
 # target_language = 'cn-CN'
