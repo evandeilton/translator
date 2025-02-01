@@ -1,96 +1,85 @@
-# Automatic Document Translator
+# PDF Translator
 
-This is an AI agent that translates documents between languages using the DeepSeek API. It is designed to be easy to use and supports multiple document formats.
+A versatile PDF translation tool supporting multiple AI translation providers.
 
-## Introduction
+## Features
 
-The Automatic Document Translator is a tool that leverages AI to translate documents from one language to another. It is ideal for users who need to quickly translate documents while maintaining the original formatting.
+- Translate PDF documents using DeepSeek, Anthropic Claude, or OpenAI
+- Chunk-level parallel translation
+- Support for multiple input document formats
+- Configurable translation parameters
 
-## Installation
+## Prerequisites
 
-### Prerequisites
+- Python 3.8+
+- Install dependencies: `pip install -r requirements.txt`
 
-- Python 3.8 or higher
-- A DeepSeek API key
+## Environment Variables
 
-### Setup
+### DeepSeek API
+- `DEEPSEEK_API_KEY`: Your DeepSeek API key
+- `DEEPSEEK_API_URL` (optional): Custom DeepSeek API endpoint
 
-1. Clone the repository:
+### Anthropic API
+- `ANTHROPIC_API_KEY`: Your Anthropic Claude API key
 
-   ```bash
-   git clone https://github.com/evandeilton/translator.git
-   cd translator
-   ```
+### OpenAI API
+- `OPENAI_API_KEY`: Your OpenAI API key
 
-2. Install the required dependencies:
+## Usage
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+### Basic Usage
 
-3. Configure your DeepSeek API key in the `.env` file.
+```bash
+# Translate using DeepSeek (default)
+python translator.py --file input.pdf --target en
 
-## How to Use
+# Translate using Anthropic Claude
+python translator.py --file input.pdf --target en --provider anthropic
 
-### Using the Terminal (Linux)
-
-1. Place the document to be translated in the `input` folder.
-2. Run the translator with the following command:
-
-   ```bash
-   python translator.py input/my_document.pdf en-US
-   ```
-
-   Replace `my_document.pdf` with the name of your file and `en-US` with the target language code.
-
-3. The translated file will be saved in the `output` folder in Markdown format.
-
-### Using Jupyter Notebook
-
-You can also use the translator within a Jupyter Notebook. Here's an example:
-
-```python
-import os
-from translator import translate_document
-
-# Set the input and output paths
-input_path = 'input/my_document.pdf'
-output_path = 'output/my_document_translated.md'
-
-# Set the target language
-target_language = 'en-US'
-# target_language = 'pt-BR' or português do Brasil
-# target_language = 'fr-FR'
-# target_language = 'it-IT'
-# target_language = 'cn-CN'
-# target_language = 'ru-RU'
-# target_language = '..-..' find out you language. Restricted to DeepSeek suported languages.
-
-
-# Run the translation
-translate_document(input_path, output_path, target_language)
+# Translate using OpenAI
+python translator.py --file input.pdf --target en --provider openai
 ```
 
-## Supported Formats
+### Advanced Options
 
-- PDF (.pdf)
-- Word (.doc, .docx)
-- OpenDocument Text (.odt)
+```bash
+# Specify model, concurrency, and chunk size
+python translator.py --file input.pdf --target en \
+    --provider openai \
+    --model gpt-4o-mini \
+    --max-chunk-tokens 1500 \
+    --concurrency 6
+```
 
-## Directory Structure
+## Supported Providers
 
-- `input/`: Original documents
-- `temp/`: Temporary files
-  - `pages/`: Individual PDF pages
-  - `translations/`: Temporary translations
-- `output/`: Final results
+### DeepSeek
+- Models: 
+  - `deepseek-chat` (default)
+  - `deepseek-reasoner`
 
-## Limitations
+### Anthropic
+- Models:
+  - `claude-3-5-haiku-20241022` (default)
+  - Other Claude 3 models supported
 
-- API costs
-- Maximum file size: 10MB
-- Maximum number of pages: 100
-- Supported languages: Depend on the DeepSeek API
+### OpenAI
+- Models:
+  - `gpt-4o-mini` (default)
+  - Other OpenAI models supported
+
+## Supported Input Formats
+
+- PDF
+- DOC
+- DOCX
+- ODT
+
+## License
+
+[Your License Here]
 
 ## Contributing
 
+Contributions are welcome! Please submit pull requests or open issues on the GitHub repository.

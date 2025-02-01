@@ -1,0 +1,32 @@
+2025-02-01 17:58:40,939 - translation_system - ERROR - Failed to translate chunk after 3 attempts: RetryError[<Future at 0x7715db8d59d0 state=finished raised APIRemovedInV1>]
+2025-02-01 17:58:40,939 - translation_system - ERROR - Task failed for page 0, chunk 0: RetryError[<Future at 0x7715db8d59d0 state=finished raised APIRemovedInV1>]
+2025-02-01 17:59:31,314 - translation_system - ERROR - Failed to translate chunk after 3 attempts: RetryError[<Future at 0x72bbce06f2d0 state=finished raised APIRemovedInV1>]
+2025-02-01 17:59:31,314 - translation_system - ERROR - Failed to translate chunk after 3 attempts: RetryError[<Future at 0x72bbce100090 state=finished raised APIRemovedInV1>]
+2025-02-01 17:59:31,314 - translation_system - ERROR - Failed to translate chunk after 3 attempts: RetryError[<Future at 0x72bbce1005d0 state=finished raised APIRemovedInV1>]
+2025-02-01 17:59:31,314 - translation_system - ERROR - Failed to translate chunk after 3 attempts: RetryError[<Future at 0x72bbce100b10 state=finished raised APIRemovedInV1>]
+2025-02-01 17:59:31,315 - translation_system - ERROR - Task failed for page 0, chunk 0: RetryError[<Future at 0x72bbce06f2d0 state=finished raised APIRemovedInV1>]
+2025-02-01 17:59:31,315 - translation_system - ERROR - Task failed for page 1, chunk 0: RetryError[<Future at 0x72bbce100090 state=finished raised APIRemovedInV1>]
+2025-02-01 17:59:31,315 - translation_system - ERROR - Task failed for page 2, chunk 0: RetryError[<Future at 0x72bbce1005d0 state=finished raised APIRemovedInV1>]
+2025-02-01 17:59:31,316 - translation_system - ERROR - Task failed for page 3, chunk 0: RetryError[<Future at 0x72bbce100b10 state=finished raised APIRemovedInV1>]
+2025-02-01 18:00:50,753 - translation_system - ERROR - Failed to translate chunk after 3 attempts: RetryError[<Future at 0x7eea7765aa50 state=finished raised APIRemovedInV1>]
+2025-02-01 18:00:50,753 - translation_system - ERROR - Failed to translate chunk after 3 attempts: RetryError[<Future at 0x7eea777004d0 state=finished raised APIRemovedInV1>]
+2025-02-01 18:00:50,753 - translation_system - ERROR - Failed to translate chunk after 3 attempts: RetryError[<Future at 0x7eea77700a50 state=finished raised APIRemovedInV1>]
+2025-02-01 18:00:50,753 - translation_system - ERROR - Failed to translate chunk after 3 attempts: RetryError[<Future at 0x7eea77700dd0 state=finished raised APIRemovedInV1>]
+2025-02-01 18:00:50,754 - translation_system - ERROR - Task failed for page 0, chunk 0: RetryError[<Future at 0x7eea7765aa50 state=finished raised APIRemovedInV1>]
+2025-02-01 18:00:50,755 - translation_system - ERROR - Task failed for page 1, chunk 0: RetryError[<Future at 0x7eea777004d0 state=finished raised APIRemovedInV1>]
+2025-02-01 18:00:50,755 - translation_system - ERROR - Task failed for page 2, chunk 0: RetryError[<Future at 0x7eea77700a50 state=finished raised APIRemovedInV1>]
+2025-02-01 18:00:50,755 - translation_system - ERROR - Task failed for page 3, chunk 0: RetryError[<Future at 0x7eea77700dd0 state=finished raised APIRemovedInV1>]
+2025-02-01 18:01:14,694 - translation_system - ERROR - Translation failed: 'Could not automatically map claude-3-5-haiku-20241022 to a tokeniser. Please use `tiktoken.get_encoding` to explicitly get the tokeniser you expect.'
+Traceback (most recent call last):
+  File "/home/jlopes/Dropbox/IA/Agentes/translate/translator.py", line 472, in translate_document
+    self.token_analyzer = TokenAnalyzer(model)
+                          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jlopes/Dropbox/IA/Agentes/translate/translator.py", line 154, in __init__
+    self.tokenizer = tiktoken.encoding_for_model(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jlopes/anaconda3/envs/datascience/lib/python3.11/site-packages/tiktoken/model.py", line 105, in encoding_for_model
+    return get_encoding(encoding_name_for_model(model_name))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jlopes/anaconda3/envs/datascience/lib/python3.11/site-packages/tiktoken/model.py", line 92, in encoding_name_for_model
+    raise KeyError(
+KeyError: 'Could not automatically map claude-3-5-haiku-20241022 to a tokeniser. Please use `tiktoken.get_encoding` to explicitly get the tokeniser you expect.'
