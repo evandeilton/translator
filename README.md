@@ -78,7 +78,7 @@ python translator.py --file input.pdf --target en \
 
 ## License
 
-[Your License Here]
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contributing
 
